@@ -1,0 +1,979 @@
+
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"54310406b6",applicationID:"199529534"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(f(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(4),f=e(5),c=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",d=l+"ixn-";a(p,function(e,n){s[n]=i(l+n,!0,"api")}),s.addPageAction=i(l+"addPageAction",!0),s.setCurrentRouteName=i(l+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(d+"tracer",[u.now(),e,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],t),e}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(d+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?c("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&c("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&c("lcp",[t[t.length-1]])}function o(e){if(e instanceof s&&!l){var n,t=Math.round(e.timeStamp);n=t>1e12?Date.now()-t:u.now()-t,l=!0,c("timing",["fi",t,{type:e.type,fid:n}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,f,c=e("handle"),u=e("loader"),s=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),f=new PerformanceObserver(i);try{a.observe({entryTypes:["paint"]}),f.observe({entryTypes:["largest-contentful-paint"]})}catch(p){}}if("addEventListener"in document){var l=!1,d=["click","keydown","mousedown","pointerdown","touchstart"];d.forEach(function(e){document.addEventListener(e,o,!1)})}}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],5:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],6:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?c(e,f,o):o()}function t(t,r,i,o){if(!l.aborted||o){e&&e(t,r,i);for(var a=n(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function d(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||i(t)}function w(e,n){u(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:d,addEventListener:d,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(l.aborted=!0,s=l.backlog={})}var f="nr@context",c=e("gos"),u=e(4),s={},p={},l=n.exports=i();l.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(y,function(n,t){e[n]||(e[n]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function i(){"complete"===d.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=e("handle"),u=e(4),s=e("ee"),p=e(3),l=window,d=l.document,m="addEventListener",v="attachEvent",g=l.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:g,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1167.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),e(2),d[m]?(d[m]("DOMContentLoaded",o,!1),l[m]("load",r,!1)):(d[v]("onreadystatechange",i),l[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=e(6)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){l([u,"",[r,a,i],f])}s(n+"start",[r,a,i],f);try{return c=e.apply(a,r)}catch(p){throw s(n+"err",[r,a,p],f),p}finally{s(n+"end",[r,a,c],f)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,p(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<n.length;c++)f=n[c],a=e[f],r(a)||(e[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||n){var o=c;c=!0;try{e.emit(t,r,i,n)}catch(a){l([a,t,r,i])}c=o}}function p(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){l([r])}for(var i in e)f.call(e,i)&&(n[i]=e[i]);return n}function l(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="profile" href="https://gmpg.org/xfn/11">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://clarivate.com/webofsciencegroup/wp-content/themes/wosg/src/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://clarivate.com/webofsciencegroup/wp-content/themes/wosg/src/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://clarivate.com/webofsciencegroup/wp-content/themes/wosg/src/img/favicon-16x16.png">
+  <link rel="manifest" href="https://clarivate.com/webofsciencegroup/wp-content/themes/wosg/src/img/site.webmanifest">
+  <link rel="mask-icon" href="https://clarivate.com/webofsciencegroup/wp-content/themes/wosg/src/img/safari-pinned-tab.svg" color="#00c2f2">
+  <meta name="msapplication-TileColor" content="#00c2f2">
+  <meta name="msapplication-config" content="https://clarivate.com/webofsciencegroup/wp-content/themes/clarivate/src/img/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>Journal Citation Reports - Web of Science Group</title>
+<link rel="alternate" hreflang="en" href="https://clarivate.com/webofsciencegroup/solutions/journal-citation-reports/" />
+
+<!-- This site is optimized with the Yoast SEO plugin v12.9.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+<link rel="canonical" href="https://clarivate.com/webofsciencegroup/solutions/journal-citation-reports/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Journal Citation Reports - Web of Science Group" />
+<meta property="og:url" content="https://clarivate.com/webofsciencegroup/solutions/journal-citation-reports/" />
+<meta property="og:site_name" content="Web of Science Group" />
+<meta property="article:publisher" content="https://www.facebook.com/webofscience/" />
+<meta property="og:image" content="https://clarivate.com/webofsciencegroup/wp-content/uploads/sites/2/2019/06/XF_photo_micromacro_maths-nature_027.jpg" />
+<meta property="og:image:secure_url" content="https://clarivate.com/webofsciencegroup/wp-content/uploads/sites/2/2019/06/XF_photo_micromacro_maths-nature_027.jpg" />
+<meta property="og:image:width" content="1920" />
+<meta property="og:image:height" content="1080" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Journal Citation Reports - Web of Science Group" />
+<meta name="twitter:site" content="@clarivate" />
+<meta name="twitter:image" content="https://clarivate.com/webofsciencegroup/wp-content/uploads/sites/2/2019/06/XF_photo_micromacro_maths-nature_027.jpg" />
+<meta name="twitter:creator" content="@clarivate" />
+<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://clarivate.com/webofsciencegroup/#website","url":"https://clarivate.com/webofsciencegroup/","name":"Web of Science Group","description":"Connected, seamless, open \u2013 the power of the Group","potentialAction":{"@type":"SearchAction","target":"https://clarivate.com/webofsciencegroup/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"ImageObject","@id":"https://clarivate.com/webofsciencegroup/solutions/journal-citation-reports/#primaryimage","url":"https://clarivate.com/webofsciencegroup/wp-content/uploads/sites/2/2019/06/XF_photo_micromacro_maths-nature_027.jpg","width":1920,"height":1080},{"@type":"WebPage","@id":"https://clarivate.com/webofsciencegroup/solutions/journal-citation-reports/#webpage","url":"https://clarivate.com/webofsciencegroup/solutions/journal-citation-reports/","inLanguage":"en-US","name":"Journal Citation Reports - Web of Science Group","isPartOf":{"@id":"https://clarivate.com/webofsciencegroup/#website"},"primaryImageOfPage":{"@id":"https://clarivate.com/webofsciencegroup/solutions/journal-citation-reports/#primaryimage"},"datePublished":"2019-06-13T13:05:11+00:00","dateModified":"2020-04-22T23:04:35+00:00"}]}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//clarivate.com' />
+<link rel='dns-prefetch' href='//play.vidyard.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Web of Science Group &raquo; Feed" href="https://clarivate.com/webofsciencegroup/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Web of Science Group &raquo; Comments Feed" href="https://clarivate.com/webofsciencegroup/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/clarivate.com\/webofsciencegroup\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.3.2"}};
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='toolset-common-es-css'  href='https://clarivate.com/webofsciencegroup/wp-content/plugins/wp-views/vendor/toolset/common-es/public/toolset-common-es.css?ver=122000' type='text/css' media='all' />
+<link rel='stylesheet' id='toolset_blocks-style-css-css'  href='https://clarivate.com/webofsciencegroup/wp-content/plugins/wp-views/vendor/toolset/blocks/public/css/style.css?ver=1.1.3' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://clarivate.com/webofsciencegroup/wp-includes/css/dist/block-library/style.min.css?ver=5.3.2' type='text/css' media='all' />
+<link rel='stylesheet' id='view_editor_gutenberg_frontend_assets-css'  href='https://clarivate.com/webofsciencegroup/wp-content/plugins/wp-views/public/css/views-frontend.css?ver=3.1.3' type='text/css' media='all' />
+<link rel='stylesheet' id='dlm-frontend-css'  href='https://clarivate.com/webofsciencegroup/wp-content/plugins/download-monitor/assets/css/frontend.css?ver=5.3.2' type='text/css' media='all' />
+<link rel='stylesheet' id='widgetopts-styles-css'  href='https://clarivate.com/webofsciencegroup/wp-content/plugins/extended-widget-options/assets/css/widget-options.css' type='text/css' media='all' />
+<link rel='stylesheet' id='clarivate-custom-style-css'  href='https://clarivate.com/webofsciencegroup/wp-content/themes/clarivate/src/css/style.min.css?ver=1.6.5' type='text/css' media='all' />
+<link rel='stylesheet' id='wosg-custom-style-css'  href='https://clarivate.com/webofsciencegroup/wp-content/themes/wosg/src/css/style.min.css?ver=1.6.5' type='text/css' media='all' />
+<link rel='stylesheet' id='clarivate-style-css'  href='https://clarivate.com/webofsciencegroup/wp-content/themes/wosg/style.css?ver=5.3.2' type='text/css' media='all' />
+<link rel='stylesheet' id='mediaelement-css'  href='https://clarivate.com/webofsciencegroup/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.13-9993131' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-mediaelement-css'  href='https://clarivate.com/webofsciencegroup/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=5.3.2' type='text/css' media='all' />
+<link rel='stylesheet' id='views-pagination-style-css'  href='https://clarivate.com/webofsciencegroup/wp-content/plugins/wp-views/embedded/res/css/wpv-pagination.css?ver=3.1.3' type='text/css' media='all' />
+<style id='views-pagination-style-inline-css' type='text/css'>
+.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-default > span.wpv-sort-list,.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-default .wpv-sort-list-item {border-color: #cdcdcd;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-default .wpv-sort-list-item a {color: #444;background-color: #fff;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-default a:hover,.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-default a:focus {color: #000;background-color: #eee;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-default .wpv-sort-list-item.wpv-sort-list-current a {color: #000;background-color: #eee;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-grey > span.wpv-sort-list,.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-grey .wpv-sort-list-item {border-color: #cdcdcd;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-grey .wpv-sort-list-item a {color: #444;background-color: #eeeeee;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-grey a:hover,.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-grey a:focus {color: #000;background-color: #e5e5e5;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-grey .wpv-sort-list-item.wpv-sort-list-current a {color: #000;background-color: #e5e5e5;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-blue > span.wpv-sort-list,.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-blue .wpv-sort-list-item {border-color: #0099cc;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-blue .wpv-sort-list-item a {color: #444;background-color: #cbddeb;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-blue a:hover,.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-blue a:focus {color: #000;background-color: #95bedd;}.wpv-sort-list-dropdown.wpv-sort-list-dropdown-style-blue .wpv-sort-list-item.wpv-sort-list-current a {color: #000;background-color: #95bedd;}
+</style>
+<link rel='stylesheet' id='addtoany-css'  href='https://clarivate.com/webofsciencegroup/wp-content/plugins/add-to-any/addtoany.min.css?ver=1.15' type='text/css' media='all' />
+<link rel='stylesheet' id='cp-module-main-style-css'  href='https://clarivate.com/webofsciencegroup/wp-content/plugins/convertplug/modules/assets/css/cp-module-main.css?ver=3.5.5' type='text/css' media='all' />
+<link rel='stylesheet' id='smile-modal-style-css'  href='https://clarivate.com/webofsciencegroup/wp-content/plugins/convertplug/modules/modal/assets/css/modal.min.css?ver=3.5.5' type='text/css' media='all' />
+<link rel='stylesheet' id='smile-slide-in-style-css'  href='https://clarivate.com/webofsciencegroup/wp-content/plugins/convertplug/modules/slide_in/assets/css/slide_in.min.css?ver=3.5.5' type='text/css' media='all' />
+<script type='text/javascript'>
+/* <![CDATA[ */
+var slide_in = {"demo_dir":"https:\/\/clarivate.com\/webofsciencegroup\/wp-content\/plugins\/convertplug\/modules\/slide_in\/assets\/demos"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://clarivate.com/webofsciencegroup/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp'></script>
+<script type='text/javascript' src='https://clarivate.com/webofsciencegroup/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='https://clarivate.com/webofsciencegroup/wp-content/plugins/add-to-any/addtoany.min.js?ver=1.1'></script>
+<script type='text/javascript' src='https://play.vidyard.com/embed/v4.js?ver=5.3.2'></script>
+<link rel='https://api.w.org/' href='https://clarivate.com/webofsciencegroup/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://clarivate.com/webofsciencegroup/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://clarivate.com/webofsciencegroup/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.3.2" />
+<link rel='shortlink' href='https://clarivate.com/webofsciencegroup/?p=35226' />
+<link rel="alternate" type="application/json+oembed" href="https://clarivate.com/webofsciencegroup/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fclarivate.com%2Fwebofsciencegroup%2Fsolutions%2Fjournal-citation-reports%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://clarivate.com/webofsciencegroup/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fclarivate.com%2Fwebofsciencegroup%2Fsolutions%2Fjournal-citation-reports%2F&#038;format=xml" />
+
+<script data-cfasync="false">
+window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};
+(function(d,s,a,b){a=d.createElement(s);b=d.getElementsByTagName(s)[0];a.async=1;a.src="https://static.addtoany.com/menu/page.js";b.parentNode.insertBefore(a,b);})(document,"script");
+</script>
+<meta name="generator" content="WPML ver:4.3.6 stt:5,59,1,29,45;" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KSQJ2Z');</script>
+  <!-- End Google Tag Manager -->
+
+    <!-- Start VWO Async Smartcode -->
+  <script type='text/javascript'>
+  window._vwo_code = window._vwo_code || (function(){
+  var account_id=366687,
+  settings_tolerance=2000,
+  library_tolerance=2500,
+  use_existing_jquery=false,
+  is_spa=1,
+  hide_element='body',
+
+  /* DO NOT EDIT BELOW THIS LINE */
+  f=false,d=document,code={use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){
+  settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);var a=d.createElement('style'),b=hide_element?hide_element+'{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}':'',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);this.load('//dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&f='+(+is_spa)+'&r='+Math.random());return settings_timer; }};window._vwo_settings_timer = code.init(); return code; }());
+  </script>
+  <!-- End VWO Async Smartcode -->
+  
+</head>
+
+<body class="solution-template-default single single-solution postid-35226">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KSQJ2Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  
+  <header class="main fixed-top bg-white py-0 shadow-sm">
+    <nav class="secondary desktop navbar navbar-expand-md navbar-light bg-light-gray">
+            <ul id="menu-eyebrow-menu" class="eyebrow-nav navbar-nav ml-auto"><li id="menu-item-454" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-454 nav-item"><a href="/webofsciencegroup/about-us" class="nav-link">About us</a></li>
+<li id="menu-item-38338" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-38338 nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Regional sites</a>
+<div class="dropdown-menu">
+<a href="https://clarivate.com/regional-pages/australasia-southeast-asia/" class=" dropdown-item">Australasia and Southeast Asia</a><a target="_blank" href="https://clarivate.com.cn/" class=" dropdown-item">China</a><a target="_blank" href="https://clarivate.jp/" class=" dropdown-item">Japan</a><a target="_blank" href="http://clarivate.co.kr/" class=" dropdown-item">Korea</a><a target="_blank" href="http://www.clarivate.ru/" class=" dropdown-item">Russia and CIS</a><a target="_blank" href="https://clarivate.com.tw/" class=" dropdown-item">Taiwan</a></div>
+</li>
+<li id="menu-item-455" class="bg-primary-accessible menu-item menu-item-type-custom menu-item-object-custom menu-item-455 nav-item"><a href="/webofsciencegroup/contact/" class="nav-link">Contact us</a></li>
+</ul>    </nav>
+
+    <!-- Primary Desktop Nav -->
+    <nav class="primary desktop navbar navbar-expand navbar-light p-0 flex-column flex-md-row">
+      <a href="https://clarivate.com/webofsciencegroup/" class="navbar-brand" rel="home">
+        <img src="https://clarivate.com/webofsciencegroup/wp-content/themes/wosg/src/img/logo.svg?v=2" alt="Web of Science Group" class="img-fluid">      </a>
+
+      <!-- Customizable header area -->
+            <ul id="menu-main-menu" class="primary-nav navbar-nav flex-row"><li id="menu-item-456" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-456 nav-item dropdown megamenu-li"><a class="nav-link" href="#" class="nav-link" id="dropdown" data-toggle="dropdown"data-toggle="dropdown">Who we are for</a>
+<div class="dropdown-menu megamenu p-md-3 shadow">
+
+<div class="container">
+
+<div class="megamenu-row row">
+<div class="subnav-col"><div class="mt-1 mb-3"><p class="product-category-title mb-0 pr-2"><a href="#" class="d-none">Who we are for<i class="material-icons ml-2">arrow_forward</i></a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-0"><a href="https://clarivate.com/webofsciencegroup/solutions/libraries/">Librarians<p class="subnav-desc pr-2">Understand and expand the reach, value, and impact of your library. We can help you deliver more value to your library and discover insights that guide the future of your institution.</p></a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-0"><a href="https://clarivate.com/webofsciencegroup/solutions/institutions-research-office/">Research Office<p class="subnav-desc pr-2">Harness the power of the Web of Science Group for the most insightful view of the global research landscape, representing over 230 subject areas, and 12M open access articles, at your fingertips.</p></a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-0"><a href="https://clarivate.com/webofsciencegroup/solutions/funder/">Funders<p class="subnav-desc pr-2">Follow your funding, track the impact. As a funder, you need the data and confidence to know where your investments can have the most impact.</p></a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-0"><a href="https://clarivate.com/webofsciencegroup/solutions/publishers/">Publishers<p class="subnav-desc pr-2">Great research starts with you. Nothing in research stands on its own. Connect with millions of authors, speed up your submission and peer-review process and get your content seen and cited by more researchers.</p></a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-0"><a href="https://clarivate.com/webofsciencegroup/solutions/researcher/">Researchers<p class="subnav-desc pr-2">The Web of Science Group is home to an integrated suite of research intelligence and workflow solutions to help you at every stage of your research journey</p></a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-0"><a href="https://clarivate.com/webofsciencegroup/solutions/corporate/">Corporate<p class="subnav-desc pr-2">Better data leads to confident research and results. Work with the Web of Science Group to understand the global research landscape for quicker, more confident innovation.</p></a></p></div></div>
+</div>
+</div>
+</div>
+</li>
+<li id="menu-item-457" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor menu-item-has-children menu-item-457 nav-item dropdown megamenu-li"><a class="nav-link" href="#" class="nav-link" id="dropdown" data-toggle="dropdown"data-toggle="dropdown">Products</a>
+<div class="dropdown-menu megamenu p-md-3 shadow">
+
+<div class="container">
+
+<div class="megamenu-row row">
+<div class="subnav-col"><div class="mt-1 mb-3"><p class="product-category-title mb-0 pr-2"><a href="#" class="d-none">Products<i class="material-icons ml-2">arrow_forward</i></a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-0"><a href="https://clarivate.com/webofsciencegroup/solutions/web-of-science/">Web of Science</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-0"><a href="https://clarivate.com/webofsciencegroup/solutions/journal-citation-reports/" class=" active">Journal Citation Reports</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-0"><a href="https://clarivate.com/webofsciencegroup/solutions/master-journal-list/">Master Journal List</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-0"><a href="https://clarivate.com/webofsciencegroup/solutions/incites/">InCites</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-0"><a href="https://clarivate.com/webofsciencegroup/solutions/endnote-site-license/">EndNote Site License</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-0"><a href="https://clarivate.com/webofsciencegroup/solutions/publisher-analytics-reports/">Publisher Analytics Reports</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-0"><a target="_blank" href="https://www.endnote.com">EndNote</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-0"><a href="https://clarivate.com/webofsciencegroup/solutions/scholarone/">ScholarOne</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-0"><a target="_blank" href="https://kopernio.com/">Kopernio</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-0"><a href="https://clarivate.com/webofsciencegroup/solutions/essential-science-indicators/">Essential Science Indicators</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-0"><a target="_blank" href="http://publons.com/about/home">Publons</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-0"><a href="https://clarivate.com/webofsciencegroup/solutions/converis/">Converis</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-0"><a href="https://clarivate.com/webofsciencegroup/solutions/web-of-science-author-connect/">Web of Science Author Connect</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-0"><a href="https://clarivate.com/webofsciencegroup/solutions/web-of-science-strategic-solutions/">Web of Science Strategic Solutions</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-0"><a href="https://clarivate.com/webofsciencegroup/solutions/vivo/">VIVO</a></p></div><div class="subnav-items mb-1 pr-2"><p class="product-category-subtitle mb-0"><a href="https://clarivate.com/webofsciencegroup/solutions/xml-and-apis/">XML &#038; APIs</a></p></div></div>
+</div>
+</div>
+</div>
+</li>
+<li id="menu-item-459" class="single-menu menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-459 nav-item dropdown megamenu-li"><a class="nav-link" href="#" class="nav-link" id="dropdown" data-toggle="dropdown"data-toggle="dropdown">Resources</a>
+<div class="dropdown-menu megamenu p-md-3 shadow">
+
+<div class="container">
+
+<div class="megamenu-row row">
+<div class="subnav-col"><p class="product-category-subtitle pr-2"><a href="https://clarivate.com/webofsciencegroup/blog">Blog</a></p></div>
+<div class="subnav-col"><p class="product-category-subtitle pr-2"><a href="https://clarivate.com/webofsciencegroup/news/">News</a></p></div>
+<div class="subnav-col"><p class="product-category-subtitle pr-2"><a href="https://clarivate.com/webofsciencegroup/solutions/researcher-recognition/">Researcher Recognition</a></p></div>
+<div class="subnav-col"><p class="product-category-subtitle pr-2"><a target="_blank" href="http://clarivate.libguides.com/home">LibGuides</a></p></div>
+<div class="subnav-col"><p class="product-category-subtitle pr-2"><a href="https://clarivate.com/webofsciencegroup/webinars/on-demand-webinars/?product=all&#038;language=all&#038;type=all">Webinars</a></p></div>
+</div>
+</div>
+</div>
+</li>
+<li id="menu-item-35976" class="single-menu menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-35976 nav-item dropdown megamenu-li"><a class="nav-link" href="#" class="nav-link" id="dropdown" data-toggle="dropdown"data-toggle="dropdown">Services</a>
+<div class="dropdown-menu megamenu p-md-3 shadow">
+
+<div class="container">
+
+<div class="megamenu-row row">
+<div class="subnav-col"><p class="product-category-subtitle pr-2"><a href="http://mjl.clarivate.com/">Master Journal List</a></p></div>
+<div class="subnav-col"><p class="product-category-subtitle pr-2"><a href="https://clarivate.com/webofsciencegroup/solutions/web-of-science-strategic-solutions/">Web of Science Strategic Solutions</a></p></div>
+<div class="subnav-col"><p class="product-category-subtitle pr-2"><a href="https://clarivate.com/webofsciencegroup/solutions/consultancy/">Custom Data</a></p></div>
+<div class="subnav-col"><p class="product-category-subtitle pr-2"><a href="https://clarivate.com/webofsciencegroup/solutions/professional-research-data-services/">Professional Research Data Services</a></p></div>
+<div class="subnav-col"><p class="product-category-subtitle pr-2"><a href="https://clarivate.com/webofsciencegroup/solutions/xml-and-apis/">XML &#038; API&#8217;s</a></p></div>
+<div class="subnav-col"><p class="product-category-subtitle pr-2"><a href="https://clarivate.com/webofsciencegroup/solutions/vivo/">VIVO</a></p></div>
+<div class="subnav-col"><p class="product-category-subtitle pr-2"><a href="https://clarivate.com/webofsciencegroup/solutions/converis/">Converis</a></p></div>
+</div>
+</div>
+</div>
+</li>
+<li id="menu-item-35491" class="menu-item menu-item-type-post_type menu-item-object-solution menu-item-35491 nav-item"><a class="nav-link" href="https://clarivate.com/webofsciencegroup/solutions/isi-institute-for-scientific-information/" class="nav-link">ISI</a></li>
+</ul>      
+      <!-- Primary BU nav -->
+      <ul class="bu-nav navbar-nav flex-row ml-md-auto">
+        <li class="nav-item dropdown megamenu-li">
+          <a class="nav-link d-flex align-items-center" href="#clvNav" data-toggle="modal" data-target="#clvNav">
+            <img src="https://clarivate.com/webofsciencegroup/wp-content/themes/clarivate/src/img/clarivate-endorser-line.svg" class="endorser-desktop img-fluid" alt="A Clarivate Analytics Solution">
+              <img src="https://clarivate.com/webofsciencegroup/wp-content/themes/clarivate/src/img/clarivate-endorser-line-mobile.svg" class="endorser-mobile img-fluid" alt="A Clarivate Analytics Solution">
+                          
+            <i class="clv-toggle material-icons ml-2">menu</i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Secondary mobile nav -->
+    <nav class="secondary mobile navbar navbar-expand-md navbar-light bg-light-gray">
+      <ul class="eyebrow-nav navbar-nav ml-auto">        
+        <ul id="menu-eyebrow-menu-1" class="eyebrow-nav navbar-nav ml-auto"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-454 nav-item"><a href="/webofsciencegroup/about-us" class="nav-link">About us</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-38338 nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Regional sites</a>
+<div class="dropdown-menu">
+<a href="https://clarivate.com/regional-pages/australasia-southeast-asia/" class=" dropdown-item">Australasia and Southeast Asia</a><a target="_blank" href="https://clarivate.com.cn/" class=" dropdown-item">China</a><a target="_blank" href="https://clarivate.jp/" class=" dropdown-item">Japan</a><a target="_blank" href="http://clarivate.co.kr/" class=" dropdown-item">Korea</a><a target="_blank" href="http://www.clarivate.ru/" class=" dropdown-item">Russia and CIS</a><a target="_blank" href="https://clarivate.com.tw/" class=" dropdown-item">Taiwan</a></div>
+</li>
+<li class="bg-primary-accessible menu-item menu-item-type-custom menu-item-object-custom menu-item-455 nav-item"><a href="/webofsciencegroup/contact/" class="nav-link">Contact us</a></li>
+</ul>      </ul>
+    </nav>
+
+    <!-- Primary mobile nav -->
+    <nav class="primary mobile navbar navbar-expand navbar-light p-2">
+      <a href="https://clarivate.com/webofsciencegroup/" class="navbar-brand mr-0 mr-md-5 pl-md-2" rel="home">
+        <img src="https://clarivate.com/webofsciencegroup/wp-content/themes/wosg/src/img/logo.svg?v=2" alt="Web of Science Group" class="img-fluid">      </a>
+      <ul class="bu-nav navbar-nav flex-row ml-auto">
+        <li class="nav-item dropdown megamenu-li">
+          <a class="nav-link d-flex align-items-center">
+            <i class="button-launch-off-canvas-menu material-icons">menu</i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Primary off-canvas nav -->
+  <nav class="nav-off-canvas bg-primary-one">
+    <div class="off-canvas-content shadow">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-12 mb-4">
+            <div class="d-flex justify-content-between align-content-center py-4">
+              <div>
+                <a class="d-flex align-items-center" href="#clvNav" data-toggle="modal" data-target="#clvNav">
+                  <img src="https://clarivate.com/webofsciencegroup/wp-content/themes/clarivate/src/img/clarivate-endorser-line.svg" class="endorser-desktop img-fluid" alt="A Clarivate Analytics Solution">
+                </a>
+              </div>
+              <div>
+                <a href="#" class="button-exit-off-canvas-menu"><i class="material-icons">close</i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <a href="https://clarivate.com/webofsciencegroup/" class="navbar-brand" rel="home">
+              <img src="https://clarivate.com/webofsciencegroup/wp-content/themes/wosg/src/img/logo.svg?v=2" alt="Web of Science Group" class="img-fluid">            
+            </a>
+          </div>
+          <div class="col-md-12">            
+            <div id="mainNavMobile" class="accordion"><div class="card"><div class="card-header px-0" id="heading456"><h2 class="mb-0"><button class="btn btn-link collapsed d-flex justify-content-between align-items-center" type="button" data-toggle="collapse" data-target="#collapse456" aria-expanded="false" aria-controls="collapse456">Who we are for<i class="material-icons ml-2">keyboard_arrow_down</i></button></h2></div>
+<div id="collapse456" class="collapse" aria-labeledby="heading456" data-parent="#mainNavMobile">
+
+<div class="card-body">
+<strong><p><a id="35274" href="#" class="d-none dropdown-item">Who we are for</a></p></strong>
+	<ul class="list-unstyled">
+<li><a  href="https://clarivate.com/webofsciencegroup/solutions/libraries/" class=" dropdown-item"><i class="material-icons mr-2">arrow_forward</i><strong>Librarians</strong></a></li><li><a  href="https://clarivate.com/webofsciencegroup/solutions/institutions-research-office/" class=" dropdown-item"><i class="material-icons mr-2">arrow_forward</i><strong>Research Office</strong></a></li><li><a  href="https://clarivate.com/webofsciencegroup/solutions/funder/" class=" dropdown-item"><i class="material-icons mr-2">arrow_forward</i><strong>Funders</strong></a></li><li><a  href="https://clarivate.com/webofsciencegroup/solutions/publishers/" class=" dropdown-item"><i class="material-icons mr-2">arrow_forward</i><strong>Publishers</strong></a></li><li><a  href="https://clarivate.com/webofsciencegroup/solutions/researcher/" class=" dropdown-item"><i class="material-icons mr-2">arrow_forward</i><strong>Researchers</strong></a></li><li><a  href="https://clarivate.com/webofsciencegroup/solutions/corporate/" class=" dropdown-item"><i class="material-icons mr-2">arrow_forward</i><strong>Corporate</strong></a></li>
+	</ul>
+
+</div>
+
+</div>
+</div>
+<div class="card"><div class="card-header px-0" id="heading457"><h2 class="mb-0"><button class="btn btn-link collapsed d-flex justify-content-between align-items-center" type="button" data-toggle="collapse" data-target="#collapse457" aria-expanded="false" aria-controls="collapse457">Products<i class="material-icons ml-2">keyboard_arrow_down</i></button></h2></div>
+<div id="collapse457" class="collapse" aria-labeledby="heading457" data-parent="#mainNavMobile">
+
+<div class="card-body">
+<strong><p><a id="35275" href="#" class="d-none dropdown-item">Products</a></p></strong>
+	<ul class="list-unstyled">
+<li><a  href="https://clarivate.com/webofsciencegroup/solutions/web-of-science/" class=" dropdown-item"><i class="material-icons mr-2">arrow_forward</i><strong>Web of Science</strong></a></li><li><a  href="https://clarivate.com/webofsciencegroup/solutions/journal-citation-reports/" class=" dropdown-item active"><i class="material-icons mr-2">arrow_forward</i><strong>Journal Citation Reports</strong></a></li><li><a  href="https://clarivate.com/webofsciencegroup/solutions/master-journal-list/" class=" dropdown-item"><i class="material-icons mr-2">arrow_forward</i><strong>Master Journal List</strong></a></li><li><a  href="https://clarivate.com/webofsciencegroup/solutions/incites/" class=" dropdown-item"><i class="material-icons mr-2">arrow_forward</i><strong>InCites</strong></a></li><li><a  href="https://clarivate.com/webofsciencegroup/solutions/endnote-site-license/" class=" dropdown-item"><i class="material-icons mr-2">arrow_forward</i><strong>EndNote Site License</strong></a></li><li><a  href="https://clarivate.com/webofsciencegroup/solutions/publisher-analytics-reports/" class=" dropdown-item"><i class="material-icons mr-2">arrow_forward</i><strong>Publisher Analytics Reports</strong></a></li><li><a  target="_blank" href="https://www.endnote.com" class=" dropdown-item"><i class="material-icons mr-2">arrow_forward</i><strong>EndNote</strong></a></li><li><a  href="https://clarivate.com/webofsciencegroup/solutions/scholarone/" class=" dropdown-item"><i class="material-icons mr-2">arrow_forward</i><strong>ScholarOne</strong></a></li><li><a  target="_blank" href="https://kopernio.com/" class=" dropdown-item"><i class="material-icons mr-2">arrow_forward</i><strong>Kopernio</strong></a></li><li><a  href="https://clarivate.com/webofsciencegroup/solutions/essential-science-indicators/" class=" dropdown-item"><i class="material-icons mr-2">arrow_forward</i><strong>Essential Science Indicators</strong></a></li><li><a  target="_blank" href="http://publons.com/about/home" class=" dropdown-item"><i class="material-icons mr-2">arrow_forward</i><strong>Publons</strong></a></li><li><a  href="https://clarivate.com/webofsciencegroup/solutions/converis/" class=" dropdown-item"><i class="material-icons mr-2">arrow_forward</i><strong>Converis</strong></a></li><li><a  href="https://clarivate.com/webofsciencegroup/solutions/web-of-science-author-connect/" class=" dropdown-item"><i class="material-icons mr-2">arrow_forward</i><strong>Web of Science Author Connect</strong></a></li><li><a  href="https://clarivate.com/webofsciencegroup/solutions/web-of-science-strategic-solutions/" class=" dropdown-item"><i class="material-icons mr-2">arrow_forward</i><strong>Web of Science Strategic Solutions</strong></a></li><li><a  href="https://clarivate.com/webofsciencegroup/solutions/vivo/" class=" dropdown-item"><i class="material-icons mr-2">arrow_forward</i><strong>VIVO</strong></a></li><li><a  href="https://clarivate.com/webofsciencegroup/solutions/xml-and-apis/" class=" dropdown-item"><i class="material-icons mr-2">arrow_forward</i><strong>XML &#038; APIs</strong></a></li>
+	</ul>
+
+</div>
+
+</div>
+</div>
+<div class="card"><div class="card-header px-0" id="heading459"><h2 class="mb-0"><button class="btn btn-link collapsed d-flex justify-content-between align-items-center" type="button" data-toggle="collapse" data-target="#collapse459" aria-expanded="false" aria-controls="collapse459">Resources<i class="material-icons ml-2">keyboard_arrow_down</i></button></h2></div>
+<div id="collapse459" class="collapse" aria-labeledby="heading459" data-parent="#mainNavMobile">
+
+<div class="card-body">
+<strong><p><a id="35591" href="https://clarivate.com/webofsciencegroup/blog" class=" dropdown-item">Blog</a></p></strong><strong><p><a id="35986" href="https://clarivate.com/webofsciencegroup/news/" class=" dropdown-item">News</a></p></strong><strong><p><a id="36412" href="https://clarivate.com/webofsciencegroup/solutions/researcher-recognition/" class=" dropdown-item">Researcher Recognition</a></p></strong><strong><p><a id="35593" target="_blank" href="http://clarivate.libguides.com/home" class=" dropdown-item">LibGuides</a></p></strong><strong><p><a id="43763" href="https://clarivate.com/webofsciencegroup/webinars/on-demand-webinars/?product=all&#038;language=all&#038;type=all" class=" dropdown-item">Webinars</a></p></strong>
+</div>
+
+</div>
+</div>
+<div class="card"><div class="card-header px-0" id="heading35976"><h2 class="mb-0"><button class="btn btn-link collapsed d-flex justify-content-between align-items-center" type="button" data-toggle="collapse" data-target="#collapse35976" aria-expanded="false" aria-controls="collapse35976">Services<i class="material-icons ml-2">keyboard_arrow_down</i></button></h2></div>
+<div id="collapse35976" class="collapse" aria-labeledby="heading35976" data-parent="#mainNavMobile">
+
+<div class="card-body">
+<strong><p><a id="35979" href="http://mjl.clarivate.com/" class=" dropdown-item">Master Journal List</a></p></strong><strong><p><a id="36406" href="https://clarivate.com/webofsciencegroup/solutions/web-of-science-strategic-solutions/" class=" dropdown-item">Web of Science Strategic Solutions</a></p></strong><strong><p><a id="36407" href="https://clarivate.com/webofsciencegroup/solutions/consultancy/" class=" dropdown-item">Custom Data</a></p></strong><strong><p><a id="38518" href="https://clarivate.com/webofsciencegroup/solutions/professional-research-data-services/" class=" dropdown-item">Professional Research Data Services</a></p></strong><strong><p><a id="36409" href="https://clarivate.com/webofsciencegroup/solutions/xml-and-apis/" class=" dropdown-item">XML &#038; API&#8217;s</a></p></strong><strong><p><a id="36408" href="https://clarivate.com/webofsciencegroup/solutions/vivo/" class=" dropdown-item">VIVO</a></p></strong><strong><p><a id="38655" href="https://clarivate.com/webofsciencegroup/solutions/converis/" class=" dropdown-item">Converis</a></p></strong>
+</div>
+
+</div>
+</div>
+<div class="card"><div class="card-header px-0" id="heading35491"><h2 class="mb-0"><a id="35491" href="https://clarivate.com/webofsciencegroup/solutions/isi-institute-for-scientific-information/" class="btn btn-link" class="btn btn-link collapsed">ISI</a></h2></div></div>
+</div>            <hr>
+            <div id="topNavMobile" class="accordion"><div class="card"><div class="card-header px-0" id="heading454"><h2 class="mb-0"><a id="454" href="/webofsciencegroup/about-us" class="btn btn-link" class="btn btn-link collapsed">About us</a></h2></div></div>
+<div class="card"><div class="card-header px-0" id="heading38338"><h2 class="mb-0"><button class="btn btn-link collapsed d-flex justify-content-between align-items-center" type="button" data-toggle="collapse" data-target="#collapse38338" aria-expanded="false" aria-controls="collapse38338">Regional sites<i class="material-icons ml-2">keyboard_arrow_down</i></button></h2></div>
+<div id="collapse38338" class="collapse" aria-labeledby="heading38338" data-parent="#topNavMobile">
+
+<div class="card-body">
+<strong><p><a id="38730" href="https://clarivate.com/regional-pages/australasia-southeast-asia/" class=" dropdown-item">Australasia and Southeast Asia</a></p></strong><strong><p><a id="38339" target="_blank" href="https://clarivate.com.cn/" class=" dropdown-item">China</a></p></strong><strong><p><a id="38341" target="_blank" href="https://clarivate.jp/" class=" dropdown-item">Japan</a></p></strong><strong><p><a id="38342" target="_blank" href="http://clarivate.co.kr/" class=" dropdown-item">Korea</a></p></strong><strong><p><a id="38344" target="_blank" href="http://www.clarivate.ru/" class=" dropdown-item">Russia and CIS</a></p></strong><strong><p><a id="38346" target="_blank" href="https://clarivate.com.tw/" class=" dropdown-item">Taiwan</a></p></strong>
+</div>
+
+</div>
+</div>
+<div class="card"><div class="card-header px-0" id="heading455"><h2 class="mb-0"><a id="455" href="/webofsciencegroup/contact/" class="btn btn-link" class="btn btn-link collapsed">Contact us</a></h2></div></div>
+</div>          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    
+          
+    </ul>
+  </nav>
+  
+<section class="hero pt-3 pt-md-5 d-flex align-items-center" style="position: relative; background-color: #FFFFFF; background-image:url('https://clarivate.com/webofsciencegroup/wp-content/uploads/sites/2/2019/06/XF_photo_micromacro_maths-nature_027.jpg'); background-size:cover;  background-repeat: none; max-width: 100%; height: auto;">
+  <div class="container-fluid">
+    <div class="row container-hero">
+      <div class="container pt-5">
+        <div class="row">
+          <div class="col-md-8 py-4">
+                        <h1 class="display-4">Journal Citation Reports</h1>
+                          <p class="hero-sub-title mb-4">Every journal has a story to tell.</p>
+                        <!-- Primary hero CTA -->
+                                        <a href="https://clarivate.com/webofsciencegroup/solutions/journal-citation-reports/contact-us/" class="btn btn-primary-accessible" >
+                Get in touch to find out more              </a>
+                        <!-- Secondary hero CTA -->
+                                        <a href="https://jcr.clarivate.com/" class="btn btn-primary-accessible" >
+                Go to product              </a>
+                        
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="content-area">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+              </div>
+    </div>
+  </div>
+</section>
+
+<!-- Begin modules -->
+  
+
+    <!-- Begin content w/ callout module -->
+  <section  class="module content-callout py-4">
+    <div class="container">
+      
+      
+            <div class="row justify-content-center">
+        <!-- Left col -->  
+        <div class="col-xs-12 col-md-6">
+          <p><em>Journal Citation Reports (JCR)</em> provides you with the transparent, publisher-neutral data and statistics you need to make confident decisions in today’s evolving scholarly publishing landscape, whether you’re submitting your first manuscript or managing a portfolio of thousands of publications.</p>
+<p>Quickly understand a journal’s role within and influence upon the global research community by exploring a rich array of citation metrics, including the <em>Journal Impact Factor (JIF)</em>, alongside descriptive data about a journal’s open access content and contributing authors.</p>
+        </div>
+        <!-- Right col -->
+        <div class="col-xs-12 col-md-4 offset-md-2">
+          <div class="callout">
+            <div class="callout-box-body callout-box-body-list p-0">
+                            <img src="https://clarivate.com/webofsciencegroup/wp-content/uploads/sites/2/2019/06/XF_photo_editorial_013.jpg" class="img-fluid w-100" />
+                            <div class="row py-2 px-4">
+                <div class="col">
+                  <div>
+                                        <p>Our network includes:</p>
+                                      </div>
+                  <ul class="callout_list p-0 my-2">
+                                        <li class="d-flex mb-3 callout-list-item">
+                      <div class="mr-1">
+                        <i class="material-icons">check_circle</i>
+                      </div>
+                      <div>
+                                                <span class="list_header">11,896 indexed journals</span>
+                                                                      </div>
+                    </li>
+                                        <li class="d-flex mb-3 callout-list-item">
+                      <div class="mr-1">
+                        <i class="material-icons">check_circle</i>
+                      </div>
+                      <div>
+                                                <span class="list_header">236 disciplines</span>
+                                                                      </div>
+                    </li>
+                                        <li class="d-flex mb-3 callout-list-item">
+                      <div class="mr-1">
+                        <i class="material-icons">check_circle</i>
+                      </div>
+                      <div>
+                                                <span class="list_header">81 countries/regions</span>
+                                                                      </div>
+                    </li>
+                                        <li class="d-flex mb-3 callout-list-item">
+                      <div class="mr-1">
+                        <i class="material-icons">check_circle</i>
+                      </div>
+                      <div>
+                                                <span class="list_header">2.3 million articles, reviews and other source items</span>
+                                                                      </div>
+                    </li>
+                                      </ul>
+                                </div>
+            </div>
+          </div>
+      </div>
+        </div>
+  </section>
+  <!-- End content w/  callout module -->
+  
+
+
+  <!-- Begin benefit columns module -->
+<section  class="module benefit-columns py-4">
+  <div class="container">
+
+    <!-- Section title -->
+    <div class="row">
+      <div class="col-md-8">  
+        <h2 class="section-title mb-5">What sets us apart?</h2>
+              </div>
+    </div>
+    <!-- End section title -->
+
+    <!-- Benefit columns -->
+    <div class="row">
+                          
+      <div class="col-md-3 mb-2">
+        <div class="card p-3">
+          <div class="mb-2">
+                        <div class="ico mb-3">
+              <img src="https://clarivate.com/webofsciencegroup/wp-content/uploads/sites/2/2019/06/XC_icon_scales_01.png" class="img-fluid">
+            </div>
+                        <div class="flex-grow-1">
+              <p><strong>Objectivity</strong></p>
+            </div>
+          </div>
+          <p>In order to make good decisions, you need information that you can trust. <em>Journal Citation Reports</em> is the only journal report of its kind produced by publisher-neutral experts, providing you with unbiased journal statistics trusted by over 9,000 institutions worldwide. <em>JCR</em> journal profiles aggregate publication and citation data sourced from the <em>Web of Science Core Collection</em>, the world’s original citation index for scientific and scholarly research.</p>
+        </div>
+      </div>
+              
+      <div class="col-md-3 mb-2">
+        <div class="card p-3">
+          <div class="mb-2">
+                        <div class="ico mb-3">
+              <img src="https://clarivate.com/webofsciencegroup/wp-content/uploads/sites/2/2019/06/XC_icon_document_10-1.png" class="img-fluid">
+            </div>
+                        <div class="flex-grow-1">
+              <p><strong>Selectivity</strong></p>
+            </div>
+          </div>
+          <p>Researching which journals to submit or subscribe to can be time consuming. Each journal profiled in the <em>JCR</em> has met the rigorous impact and quality standards documented in the <em>Web of Science Core Collection</em> <a href="https://clarivate.com/webofsciencegroup/solutions/editorial/">editorial selection process</a>—only the journals indexed in the <em>Science Citation Index Expanded (SCIE)</em> an <em>Social Sciences Citation Index (SSCI)</em> are included—so that you can quickly find a list of the most influential journals in the sciences and social sciences.</p>
+        </div>
+      </div>
+              
+      <div class="col-md-3 mb-2">
+        <div class="card p-3">
+          <div class="mb-2">
+                        <div class="ico mb-3">
+              <img src="https://clarivate.com/webofsciencegroup/wp-content/uploads/sites/2/2019/06/XC_icon_profile_15-4.png" class="img-fluid">
+            </div>
+                        <div class="flex-grow-1">
+              <p><strong>Quality control</strong></p>
+            </div>
+          </div>
+          <p><em>Web of Science</em> monitors and excludes journals that demonstrate predatory behavior; journals in the <em>JCR</em> are subject to additional analysis to detect abnormal citation activity. Journals displaying evidence of excessive self-citation and citation stacking are suppressed from the <em>JCR</em> to ensure the integrity of the reports.</p>
+<p>Read our <a href="https://clarivate.com/products/journal-citation-reports/jcr-editorial-expression-concern" target="_blank" rel="noopener">Editorial expression of concern</a>.</p>
+        </div>
+      </div>
+              
+      <div class="col-md-3 mb-2">
+        <div class="card p-3">
+          <div class="mb-2">
+                        <div class="ico mb-3">
+              <img src="https://clarivate.com/webofsciencegroup/wp-content/uploads/sites/2/2019/06/XC_icon_eye_03-4.png" class="img-fluid">
+            </div>
+                        <div class="flex-grow-1">
+              <p><strong>Transparency </strong></p>
+            </div>
+          </div>
+          <p>Offering you far more than just a number, <em>JCR</em> journal profiles summarize a journal’s place in the network of scholarly communications so that you can make better informed, confident decisions. View the relationship between article and journal citations with visualizations and linked data alongside descriptive open access statistics to understand the relative contribution of open access articles to a journal’s overall volume of content and citations.</p>
+        </div>
+      </div>
+                </div>
+    <!-- End benefit columns -->
+
+    
+  </div>
+</section>
+<!-- End benefit columns module -->
+  
+
+
+    <!-- Begin vertical content module -->
+  <section  class="module vertical-tabs py-4">
+    <div class="container">
+
+            <!-- Section title -->
+      <div class="row">
+        <div class="col-md-8">
+          <h2 class="section-title">Who is the Journal Citation Reports for? </h2>
+        </div>
+      </div>
+      <!-- End section title -->
+      
+                
+      <div class="row">
+        <!-- Tabbed content box -->
+        <div class="col-md-8 order-2 order-md-1">
+          <div class="tab-content border p-5" id="v-tabs-tabContent">
+                        <div class="tab-pane fade show active" id="v-tabs-1" role="tabpanel" aria-labelledby="v-tabs-1-tab">
+              <h3 class="mb-3">Publishers and editors </h3>
+              <p>Understand how your journals are performing and benchmark them against others in their discipline.</p>
+              
+              <!-- Tabbed content CTA -->
+              
+              <!-- Tabbed content columns -->              
+                          </div>
+                        <div class="tab-pane fade show " id="v-tabs-2" role="tabpanel" aria-labelledby="v-tabs-2-tab">
+              <h3 class="mb-3">Librarians </h3>
+              <p>Understand which journals are the most important to your institution&#8217;s and researchers’ success.</p>
+<p><a href="http://clarivate.libguides.com/jcr">Visit our LibGuides page.</a></p>
+              
+              <!-- Tabbed content CTA -->
+              
+              <!-- Tabbed content columns -->              
+                          </div>
+                        <div class="tab-pane fade show " id="v-tabs-3" role="tabpanel" aria-labelledby="v-tabs-3-tab">
+              <h3 class="mb-3">Researchers </h3>
+              <p>Use the <em>Journal Citation Reports </em> as a definitive list and guide to discover and select the most appropriate journals to read and publish your research findings.</p>
+              
+              <!-- Tabbed content CTA -->
+              
+              <!-- Tabbed content columns -->              
+                          </div>
+                      </div>       
+        </div>
+        <!-- Tabbed content box tabs -->
+        <div class="col-md-4 order-1 order-md-2">
+          <div class="nav flex-column" id="v-tabs-tab" role="tablist" aria-orientation="vertical">
+                        <a class="nav-link py-md-3 active" id="v-tabs-1-tab" data-toggle="pill" href="#v-tabs-1" role="tab" aria-controls="v-tabs-1" aria-selected="true">
+              Publishers and editors                             <span class="vertical-tab-subtitle">Understand a journal's performance</span>
+                          </a>
+                        <a class="nav-link py-md-3 " id="v-tabs-2-tab" data-toggle="pill" href="#v-tabs-2" role="tab" aria-controls="v-tabs-2" aria-selected="true">
+              Librarians                             <span class="vertical-tab-subtitle">Find the journals most valuable to your researchers </span>
+                          </a>
+                        <a class="nav-link py-md-3 " id="v-tabs-3-tab" data-toggle="pill" href="#v-tabs-3" role="tab" aria-controls="v-tabs-3" aria-selected="true">
+              Researchers                             <span class="vertical-tab-subtitle">Discover the journals most relevant to publish your work in</span>
+                          </a>
+                      </div>
+        </div>
+      </div>
+          </div>
+  </section>
+  <!-- End vertical tab module -->
+    
+
+
+  <!-- Begin benefit columns module -->
+<section  class="module benefit-columns py-4">
+  <div class="container">
+
+    <!-- Section title -->
+    <div class="row">
+      <div class="col-md-8">  
+        <h2 class="section-title mb-5">Using the Journal Impact Factor wisely </h2>
+                  <p><span data-contrast="auto">The <em>Web of Science Group</em> does not depend on the Journal Impact Factor alone in assessing the usefulness of a journal, and neither should anyone else. The Journal Impact Factor should not be used without careful attention to the many phenomena that influence citation rates – for example the average number of references cited in the average article. The Journal Impact Factor should be used with informed peer review. In the case of academic evaluation for tenure, it is sometimes inappropriate to use the impact of the source journal to estimate the expected frequency of a recently published article. Again, the Journal Impact Factor should be used with informed peer review. Citation frequencies for individual articles are quite varied.</span><span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:259}"> </span></p>
+<p><em>Journal Citation Reports</em> now includes more article-level data to provide a clearer understanding of the reciprocal relationship between the article and the journal. This level of transparency allows you to not only see the data, but also see through the data to a more nuanced consideration of journal value.<span data-ccp-props="{&quot;201341983&quot;:0,&quot;335559739&quot;:160,&quot;335559740&quot;:259}"> </span></p>
+              </div>
+    </div>
+    <!-- End section title -->
+
+    <!-- Benefit columns -->
+    <div class="row">
+                </div>
+    <!-- End benefit columns -->
+
+    
+  </div>
+</section>
+<!-- End benefit columns module -->
+  
+
+
+    <!-- Begin featured assets module -->
+  <section id="Resources"  class="module featured-assets py-4">
+    <div class="container">
+      <div class="row">
+        <div class="featured-assets-main-body col-xs-12 col-md-5 pr-5">
+
+                    <!-- Section title -->
+          <h2 class="section-title">Resources for publishers</h2>
+          <!-- End section title -->
+                    
+
+          <p><span class="TextRun SCXW152258352 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW152258352 BCX0">We’ve created a publisher toolkit to support you in responsibly promoting your inclusion in the</span></span><em><span class="TextRun SCXW152258352 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW152258352 BCX0"> Journal Citation Reports </span></span></em><span class="TextRun SCXW152258352 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW152258352 BCX0">to the research community. To acknowledge your listing in the<em> Journal Citation Reports</em></span></span><span class="TextRun SCXW152258352 BCX0" lang="EN-US" xml:lang="EN-US" data-contrast="auto"><span class="NormalTextRun SCXW152258352 BCX0">, we have created a badge for you to use on your journal website or in your marketing material.</span></span><span class="EOP SCXW152258352 BCX0" data-ccp-props="{}"> </span></p>
+        </div>
+                <div class="col-xs-12 col-md-7">
+          <div class="row">
+                                                                    <div class="col">
+                  <a href="https://clarivate.com/webofsciencegroup/wp-content/uploads/sites/2/2019/10/WS407569850_JCR_Full_Journal_list-2.pdf">
+                    <img src="https://clarivate.com/webofsciencegroup/wp-content/uploads/sites/2/2019/07/WS_hero-graphic_RGB_11-800x600.jpg" class="img-fluid " />
+                  </a>
+                  <div class="p-2 asset-body">
+                    <a href="https://clarivate.com/webofsciencegroup/wp-content/uploads/sites/2/2019/10/WS407569850_JCR_Full_Journal_list-2.pdf">
+                      <h4>Full Journal Citation Reports list </h4>
+                      <p></p>
+                    </a>
+                  </div>
+                </div>
+                                                                      <div class="col">
+                  <a href="https://clarivate.com/wp-content/uploads/2019/06/JCR_First_time_list140619.pdf">
+                    <img src="https://clarivate.com/webofsciencegroup/wp-content/uploads/sites/2/2019/07/WS_hero-graphic_RGB_10-800x600.jpg" class="img-fluid " />
+                  </a>
+                  <div class="p-2 asset-body">
+                    <a href="https://clarivate.com/wp-content/uploads/2019/06/JCR_First_time_list140619.pdf">
+                      <h4>First time Journal Citation Reports inclusion list </h4>
+                      <p></p>
+                    </a>
+                  </div>
+                </div>
+                                                                      <div class="col">
+                  <a href="http://images.mail.discover.clarivate.com/Web/ClarivateAnalytics/%7B54e09253-830c-4294-a1c0-0300e15b40e9%7D_JCR_Howto.pdf?utm_campaign=Journal_Citation_Reports_2019_Release_SAR_Global_2019&amp;utm_source=eloqua&amp;utm_medium=prereleasereports">
+                    <img src="https://clarivate.com/webofsciencegroup/wp-content/uploads/sites/2/2019/07/WS_hero-graphic_RGB_09-800x600.jpg" class="img-fluid " />
+                  </a>
+                  <div class="p-2 asset-body">
+                    <a href="http://images.mail.discover.clarivate.com/Web/ClarivateAnalytics/%7B54e09253-830c-4294-a1c0-0300e15b40e9%7D_JCR_Howto.pdf?utm_campaign=Journal_Citation_Reports_2019_Release_SAR_Global_2019&amp;utm_source=eloqua&amp;utm_medium=prereleasereports">
+                      <h4>For publishers: Promoting your inclusion in the Journal Citation Reports </h4>
+                      <p></p>
+                    </a>
+                  </div>
+                </div>
+                                                                      <div class="col">
+                  <a href="https://clarivate.com/wp-content/uploads/2019/06/Suppression-Policy-External-Powerpoint-June-10.pdf">
+                    <img src="https://clarivate.com/webofsciencegroup/wp-content/uploads/sites/2/2019/07/WS_hero-graphic_RGB_07-800x600.jpg" class="img-fluid " />
+                  </a>
+                  <div class="p-2 asset-body">
+                    <a href="https://clarivate.com/wp-content/uploads/2019/06/Suppression-Policy-External-Powerpoint-June-10.pdf">
+                      <h4>View our Journal Citation Reports suppression policy </h4>
+                      <p></p>
+                    </a>
+                  </div>
+                </div>
+                                    </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End featured assets module -->
+  
+
+
+    <!-- Begin product listing row module -->  
+  <section  class="module solution-listing-row py-4">
+    <div class="container">
+                        <div class="row">
+        <div class="solution-category wow fadeIn col-md-12 py-5 border-bottom" data-wow-duration="2s" data-wow-offset="20">
+          <div class="row">
+            <div class="col-md-7">
+              <div class="solution-category-title mb-3 d-flex justify-content-between align-items-center">
+                <div class="solution-category-title-field">
+                  <p class="lead">Subscription options</p>
+                </div>
+                              </div>
+              <ul>
+<li><em>InCites</em> – <em>Essential Science Indicators</em> and <em>Journal Citation Reports</em> are both included in your<em> InCites</em> subscription</li>
+<li>Journal Evaluation and Highly Cited Data – a bundle that includes both <em>Essential Science Indicators</em> and <em>Journal Citation Reports</em></li>
+</ul>
+              <!-- Begin product listing row module links -->
+                            </div>
+                      </div>
+        </div>
+      </div>
+                </div>
+  </section>  
+  <!-- End product listing row module -->
+    
+
+
+    <!-- Begin get started module -->
+    <section id="getStarted" class="module get-started pt-md-5 pr-md-5 d-md-flex align-items-end" style="background: url('https://clarivate.com/webofsciencegroup/wp-content/uploads/sites/2/2019/07/WS_hero-graphic_RGB_10_for_web.png') 0 0 no-repeat #5E33BF;  -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+    <div class="content d-flex align-items-center mt-mb-5 p-3 p-md-5" style="background: #5E33BF;">
+      <div>
+        <h2 style="color: #FFFFFF;">Get started today</h2>
+        <div class="lead" style="color: #FFFFFF;">
+          <p>Find your journal&#8217;s story</p>
+        </div>
+        <!-- Tabbed content CTA -->
+                            
+        <p>              
+                              <a href="https://clarivate.com/webofsciencegroup/solutions/journal-citation-reports/contact-us/" class="btn btn-white">
+            Contact us          </a>
+        </p>
+              
+      </div>
+    </div>
+  </section>
+  <!-- End get started module -->    
+    
+
+<!-- End modules -->
+
+
+<footer id="colophon" class="site-footer">
+	<div class="container-fluid">
+		<div class="row py-3 align-items-center">
+			<div class="col-md-6 mb-3 mb-md-0 text-center text-md-left">
+        <ul class="list-inline mb-0">
+          <li class="list-inline-item wow slideInRight">
+            <a href="/" target="_blank" data-toggle="tooltip" data-placement="top" title="Clarivate Analytics">
+              <img src="https://clarivate.com/webofsciencegroup/wp-content/themes/clarivate/src/img/icon-clarivate.svg" class="bu-icon" alt="Clarivate Analytics">
+            </a>
+          </li>
+          <li class="list-inline-item wow slideInRight">
+            <a href="/compumark/" target="_blank" data-toggle="tooltip" data-placement="top" title="CompuMark">
+              <img src="https://clarivate.com/webofsciencegroup/wp-content/themes/clarivate/src/img/icon-compumark.svg" class="bu-icon" alt="CompuMark">
+            </a>
+          </li>
+          <li class="list-inline-item wow slideInRight" data-wow-delay=".1s">
+            <a href="/cortellis/" target="_blank" data-toggle="tooltip" data-placement="top" title="Cortellis">
+              <img src="https://clarivate.com/webofsciencegroup/wp-content/themes/clarivate/src/img/icon-cortellis.svg" class="bu-icon" alt="Cortellis">
+            </a>
+          </li>
+          <li class="list-inline-item wow slideInRight" data-wow-delay=".2s">
+            <a href="/derwent/" target="_blank" data-toggle="tooltip" data-placement="top" title="Derwent">
+              <img src="https://clarivate.com/webofsciencegroup/wp-content/themes/clarivate/src/img/icon-derwent.svg" class="bu-icon" alt="Derwent">
+            </a>
+          </li>
+          <li class="list-inline-item wow slideInRight" data-wow-delay=".3s">
+            <a href="https://markmonitor.com" target="_blank" data-toggle="tooltip" data-placement="top" title="MarkMonitor">
+              <img src="https://clarivate.com/webofsciencegroup/wp-content/themes/clarivate/src/img/icon-markmonitor.svg" class="bu-icon" alt="MarkMonitor">
+            </a>
+          </li>
+          <li class="list-inline-item wow slideInRight" data-wow-delay=".4s">
+            <a href="/techstreet/" target="_blank" data-toggle="tooltip" data-placement="top" title="Techstreet">
+              <img src="https://clarivate.com/webofsciencegroup/wp-content/themes/clarivate/src/img/icon-techstreet.svg" class="bu-icon" alt="Techstreet">
+            </a>
+          </li>
+          <li class="list-inline-item wow slideInRight" data-wow-delay=".5s">
+            <a href="/webofsciencegroup/" target="_blank" data-toggle="tooltip" data-placement="top" title="Web of Science Group">
+              <img src="https://clarivate.com/webofsciencegroup/wp-content/themes/clarivate/src/img/icon-wosg.svg" class="bu-icon" alt="Web of Science Group">
+            </a>
+          </li>
+        </ul>
+      </div>
+			<div class="col-md-6 d-flex justify-content-center justify-content-md-end">
+				<div class="site-info text-center text-md-left">
+          <img src="https://clarivate.com/webofsciencegroup/wp-content/themes/clarivate/src/img/clarivate-endorser-line.svg" class="endorser-footer" alt="A Clarivate Analytics Solution">
+          <!--Web of Science Group-->
+				</div><!-- .site-info -->
+      </div>
+		</div>
+    <div class="row bg-light-gray">
+      <div class="privacy col-md-7 py-3 text-center text-md-left">
+        <div class="menu-footer-menu-container"><ul id="menu-footer-menu" class="list-inline mb-0 d-flex flex-column d-md-block"><li id="menu-item-35741" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-35741"><a href="http://clarivate.com/legal/copyright-notice/">© 2020 Clarivate</a></li>
+<li id="menu-item-35742" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-35742"><a href="http://clarivate.com/legal/terms-of-use/"><strong>Terms of use</strong></a></li>
+<li id="menu-item-35743" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-35743"><a href="http://clarivate.com/legal/privacy-policy/"><strong>Privacy policy (updated)</strong></a></li>
+<li id="menu-item-35744" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-35744"><a href="http://clarivate.com/legal/cookie-policy/"><strong>Cookie policy</strong></a></li>
+</ul></div>      </div>
+      <div class="social-icons col-md-5 text-center text-md-right">
+        <ul class="list-inline my-3">
+                    <li class="list-inline-item"><a href="https://twitter.com/webofscience?lang=en" target="_blank"><img src="https://clarivate.com/webofsciencegroup/wp-content/themes/clarivate/src/img/twitter-logo.svg" alt="Twitter"></a></li>
+                              <li class="list-inline-item"><a href="https://www.linkedin.com/company/clarivate-analytics?_ga=1.191386218.1115848109.1486741410" target="_blank"><img src="https://clarivate.com/webofsciencegroup/wp-content/themes/clarivate/src/img/linkedin-logo.svg" alt="LinkedIn"></a></li>
+                              <li class="list-inline-item"><a href="https://www.facebook.com/webofscience/" target="_blank"><img src="https://clarivate.com/webofsciencegroup/wp-content/themes/clarivate/src/img/facebook-logo.svg" alt="Facebook"></a></li>
+                              <li class="list-inline-item"><a href="https://www.instagram.com/clarivateanalytics/?hl=en" target="_blank"><img src="https://clarivate.com/webofsciencegroup/wp-content/themes/clarivate/src/img/instagram-logo.svg" alt="Instagram"></a></li>
+                  </ul>
+      </div>
+    </div>
+	</div>
+</footer>
+
+<!-- Clarivate BU Nav -->
+<div class="modal fade" id="clvNav" tabindex="-1" role="dialog" aria-labelledby="clvNavLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-8">
+                      <a href="https://clarivate.com" target="_blank"><img src="https://clarivate.com/webofsciencegroup/wp-content/themes/clarivate/src/img/logo.svg" class="clarivate-logo img-fluid mb-5" alt="A Clarivate Analytics Company"></a>
+                      </div>
+          <div class="col-4">
+            <div class="d-flex justify-content-end">
+              <div class="modal-close d-flex align-items-center mb-4" data-dismiss="modal">
+                <strong>Close</strong> <i class="material-icons ml-2">close</i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 border-right">            
+            <ul class="corporate-links list-unstyled">
+              <li><a href="https://clarivate.com/about-us/what-we-do/" target="_blank">What we do</a></li>
+              <li><a href="https://clarivate.com/blog/" target="_blank">Blog</a></li>
+              <li><a href="https://clarivate.com/careers" target="_blank">Careers</a></li>
+            </ul>            
+          </div>
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col mb-4">
+                                <form action="https://clarivate.com/webofsciencegroup" method="get" enctype="multipart/form-data" novalidate>
+                  <input type="text" name="s" id="mc-SEARCH" placeholder="Search products, skills, training..." value="" class="searchbar form-control-lg" />
+                </form>
+                              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 p-3">
+                <a href="/compumark/" target="_blank" data-toggle="tooltip" data-placement="top" title="CompuMark">
+                  <img src="https://clarivate.com/webofsciencegroup/wp-content/themes/clarivate/src/img/icon-compumark.svg" class="bu-icon mb-1" alt="CompuMark" style="height:20px;"> <strong>CompuMark</strong>
+                  <p>Giving brands the ultimate certainty on trademarks through industry leading content and expertise.</p>
+                </a>
+              </div>
+              <div class="col-md-6 p-3">
+                <a href="/cortellis/" target="_blank" data-toggle="tooltip" data-placement="top" title="Cortellis">
+                  <img src="https://clarivate.com/webofsciencegroup/wp-content/themes/clarivate/src/img/icon-cortellis.svg" class="bu-icon mb-1" alt="Cortellis" style="height:20px;"> <strong>Cortellis</strong>
+                  <p>A suite of life science intelligence solutions that accelerate innovation.</p>
+                </a>
+              </div>
+              <div class="col-md-6 p-3">
+                <a href="/derwent/" target="_blank" data-toggle="tooltip" data-placement="top" title="Derwent">
+                  <img src="https://clarivate.com/webofsciencegroup/wp-content/themes/clarivate/src/img/icon-derwent.svg" class="bu-icon mb-1" alt="Derwent" style="height:20px;"> <strong>Derwent</strong>
+                  <p>World leading patent intelligence, tools and services that power the innovation lifecycle.</p>
+                </a>
+              </div>
+              <div class="col-md-6 p-3">
+                <a href="https://markmonitor.com" target="_blank" data-toggle="tooltip" data-placement="top" title="MarkMonitor">
+                  <img src="https://clarivate.com/webofsciencegroup/wp-content/themes/clarivate/src/img/icon-markmonitor.svg" class="bu-icon mb-1" alt="MarkMonitor" style="height:20px;"> <strong>MarkMonitor</strong>
+                  <p>MarkMonitor helps establish and protect the online presence of the world's leading brands – and the billions who use them.</p>
+                </a>
+              </div>
+              <div class="col-md-6 p-3">
+                <a href="/techstreet/" target="_blank" data-toggle="tooltip" data-placement="top" title="Techstreet">
+                  <img src="https://clarivate.com/webofsciencegroup/wp-content/themes/clarivate/src/img/icon-techstreet.svg" class="bu-icon mb-1" alt="Techstreet" style="height:20px;"> <strong>Techstreet</strong>
+                  <p>One of the world's largest collections of industry codes and standards plus powerful tools for standards management.</p>
+                </a>
+              </div>
+              <div class="col-md-6 p-3">
+                <a href="/webofsciencegroup/" target="_blank" data-toggle="tooltip" data-placement="top" title="Web of Science Group" style="height:20px;">
+                  <img src="https://clarivate.com/webofsciencegroup/wp-content/themes/clarivate/src/img/icon-wosg.svg" class="bu-icon mb-1" alt="Web of Science Group"> <strong>Web of Science Group</strong>
+                  <p>Organizing the world's research information. We make research connect.</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+			<script type="text/javascript" id="modal">
+				document.addEventListener("DOMContentLoaded", function(){
+					startclock();
+				});
+				function stopclock (){
+					if(timerRunning) clearTimeout(timerID);
+					timerRunning = false;
+						//document.cookie="time=0";
+					}
+					function showtime () {
+						var now = new Date();
+						var my = now.getTime() ;
+						now = new Date(my-diffms) ;
+						//document.cookie="time="+now.toLocaleString();
+						timerID = setTimeout('showtime()',10000);
+						timerRunning = true;
+					}
+					function startclock () {
+						stopclock();
+						showtime();
+					}
+					var timerID = null;
+					var timerRunning = false;
+					var x = new Date() ;
+					var now = x.getTime() ;
+					var gmt = 1588537416 * 1000 ;
+					var diffms = (now - gmt) ;
+				</script>
+								<script type="text/javascript" id="info-bar">
+					document.addEventListener("DOMContentLoaded", function(){
+						startclock();
+					});
+					function stopclock (){
+						if(timerRunning) clearTimeout(timerID);
+						timerRunning = false;
+						//document.cookie="time=0";
+					}
+					function showtime () {
+						var now = new Date();
+						var my = now.getTime() ;
+						now = new Date(my-diffms) ;
+						//document.cookie="time="+now.toLocaleString();
+						timerID = setTimeout('showtime()',10000);
+						timerRunning = true;
+					}
+					function startclock () {
+						stopclock();
+						showtime();
+					}
+					var timerID = null;
+					var timerRunning = false;
+					var x = new Date() ;
+					var now = x.getTime() ;
+					var gmt = 1588537416 * 1000 ;
+					var diffms = (now - gmt) ;
+				</script>
+								<script type="text/javascript" id="slidein">
+					document.addEventListener("DOMContentLoaded", function(){
+						startclock();
+					});
+					function stopclock (){
+						if(timerRunning) clearTimeout(timerID);
+						timerRunning = false;
+						//document.cookie="time=0";
+					}
+
+					function showtime () {
+						var now = new Date();
+						var my = now.getTime() ;
+						now = new Date(my-diffms) ;
+						//document.cookie="time="+now.toLocaleString();
+						timerID = setTimeout('showtime()',10000);
+						timerRunning = true;
+					}
+
+					function startclock () {
+						stopclock();
+						showtime();
+					}
+					var timerID = null;
+					var timerRunning = false;
+					var x = new Date() ;
+					var now = x.getTime() ;
+					var gmt = 1588537416 * 1000 ;
+					var diffms = (now - gmt) ;
+				</script>
+				<script type='text/javascript'>
+/* <![CDATA[ */
+var varWidgetOpts = {"shallNotFixed":"","margin_top":"0","disable_width":"0","disable_height":"0"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://clarivate.com/webofsciencegroup/wp-content/plugins/extended-widget-options/assets/js/jquery.widgetopts.min.js?ver=5.3.2'></script>
+<script type='text/javascript' src='https://clarivate.com/webofsciencegroup/wp-content/themes/clarivate/src/js/all-min.js'></script>
+<script type='text/javascript' src='https://clarivate.com/webofsciencegroup/wp-includes/js/wp-embed.min.js?ver=5.3.2'></script>
+<script type='text/javascript' src='https://clarivate.com/webofsciencegroup/wp-content/themes/clarivate/src/js/video.js'></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"54310406b6","applicationID":"199529534","transactionName":"NVNWZBEAWUpVUkcKDAwZdVMXCFhXG0JaDQQOUxlDDA1CTV1eXQ==","queueTime":0,"applicationTime":1478,"atts":"GRRVElkaSkQ=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
